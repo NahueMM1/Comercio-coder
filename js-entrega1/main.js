@@ -34,14 +34,12 @@ parseFloat = Pasa un string  con decimal a un numero  decimal del tipo number
 
 */
 
-
 // let numeroUno = 10;
 // let numeroDos = 10;
 // let suma = numeroUno + numeroDos;
 // let resta = numeroUno - numeroDos;
 // let multiplicacion = numeroUno * numeroDos;
 // let divison = numeroUno / numeroDos;
-
 
 // console.log("Aca esta la suma", suma);
 // console.log("Aca esta la resta", resta);
@@ -55,12 +53,9 @@ parseFloat = Pasa un string  con decimal a un numero  decimal del tipo number
 // let mensaje = saludo + nombre;
 // console.log(mensaje);
 
-
 /* let nombre = prompt("Ingrese su nombre");
 let mensaje = "Hola " + nombre;
 alert(mensaje); */
-
-
 
 /* let nombre = prompt("Ingrese su nombre");
 let mensaje = "Hola " + nombre;
@@ -81,29 +76,65 @@ alert(suma); */
 }
 */
 
-
 //                          ENTREGA NRO #1
 
 
-let nombreCliente = prompt('¡Bienvenido/a a la tienda de caramelos! ¿Cuál es su nombre?');
-let saldo = 10; //saldo inicial de la cuenta
-let precioCaramelo = 0.5; //precio de cada caramelo
-let cantidadCaramelos = 0; //cantidad de caramelos comprados
-let seguirComprando = true; //variable para saber si el usuario quiere seguir comprando
 
-alert(`¡Hola ${nombreCliente}! Bienvenido/a a nuestra tienda de caramelos. Contamos con una gran variedad de sabores y colores. Comience su compra con $${saldo}.`);
+function saludarCliente() {
+  let nombre;
+  do {
+    nombre = prompt("¡Bienvenido! Por favor, introduce tu nombre:");
+    if (!/^[a-zA-Z]+$/.test(nombre)) {
+      alert("Lo siento, el nombre solo debe contener letras.");
+    }
+  } while (!nombre || !/^[a-zA-Z]+$/.test(nombre));
 
-while (seguirComprando) {
-  let cantidad = parseInt(prompt(`Tiene $${saldo}. Cada caramelo cuesta $${precioCaramelo}. ¿Cuántos caramelos desea comprar?`));
-  
-  if (cantidad * precioCaramelo > saldo) {
-    alert('No tiene suficiente dinero para comprar esa cantidad de caramelos.');
-  } else {
-    saldo -= cantidad * precioCaramelo;
-    cantidadCaramelos += cantidad;
-    
-    seguirComprando = confirm(`Ha comprado ${cantidad} caramelos por $${cantidad * precioCaramelo}. ¿Desea seguir comprando?`);
-  }
+  alert("¡Hola " + nombre + "! Bienvenido/a a la carameleria.");
+};
+
+function sumarCaramelos() {
+  let carameloR = Number(prompt("Ingrese la cantidad de caramelos Rojos: "));
+  let carameloV = Number(prompt("Ingrese la cantidad de caramelos Verdes: "));
+  // Se utilizan dos prompts para que el usuario ingrese la cantidad de caramelos a sumar.
+  // Los valores ingresados se convierten en números mediante la función Number().
+
+  let totalCaramelos = carameloR + carameloV;
+
+  return totalCaramelos;
 }
 
-alert(`Gracias por su compra, ${nombreCliente}! Ha comprado un total de ${cantidadCaramelos} caramelos por un valor de $${cantidadCaramelos * precioCaramelo}. Le queda un saldo de $${saldo}. ¡Vuelva pronto!`);
+let saldo = 150; //saldo inicial de la cuenta
+let precioCaramelo = 10; //precio de cada caramelo
+
+
+//Inicio de la entrega.
+
+
+saludarCliente(); //Bienvenida al cliente
+let nombre = saludarCliente;
+
+let caramelos = alert(`En estos momentos solo contamos con caramelos Rojos y Verdes, todos nuestros caramelos tienen un valor de $${precioCaramelo} ,por apertura de la tienda te damos un voucher de regalo de $${saldo} para que lo utilices en los caramelos que quieras`);
+
+let resultado = sumarCaramelos();
+alert("El total de caramelos es: " + resultado);
+
+
+let importePagar = resultado * precioCaramelo
+
+let monto = alert(`Los ${resultado} caramelos tienen un costo total de $${importePagar}`);
+
+
+let confirmacion;
+  do {
+    confirmacion = prompt("¿Confirmamos la compra? coloque Si para proceder o No para cancelar");
+    switch (confirmacion) {
+      case "Si":
+        alert(`Gracias por su compra, Ha comprado un total de ${resultado} caramelos por un valor de $${importePagar}. Le queda un saldo de $${saldo - importePagar}. ¡Vuelva pronto!`);
+        break;
+      case "No":
+        alert("La compra ha sido cancelada")
+      break;
+      default:
+        alert("No se ha ingresado ninguna respuesta válida. Por favor, ingrese Si o No.")
+    }
+  } while (confirmacion !== "Si");
