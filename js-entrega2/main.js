@@ -140,3 +140,52 @@ do {
       );
   }
 } while (confirmacion !== "Si");
+
+
+
+//                    SEGUNDA ENTREGA
+
+function ofrecerPromocion() {
+  var chupetines = [
+    { color: "rojo", sabor: "cereza" },
+    { color: "verde", sabor: "manzana" },
+    { color: "azul", sabor: "arándano" },
+    { color: "amarillo", sabor: "limón" },
+    { color: "naranja", sabor: "naranja" },
+  ];
+
+  // Generar un número aleatorio para dar la cantidad de chupetines en la promoción
+  var cantidadChupetines = Math.floor(Math.random() * 10) + 4; // Entre 1 y 10 chupetines
+  var chupetinesOfrecidos = [];
+
+  // Seleccionar chupetines aleatorios y agregarlos a la lista de chupetines ofrecidos
+  for (var i = 0; i < cantidadChupetines; i++) {
+    var indice = Math.floor(Math.random() * chupetines.length);
+    var chupetin = chupetines[indice];
+    chupetinesOfrecidos.push(chupetin);
+  }
+
+  // Aca se da crea el mensaje que se da al cliente ofreciendo la promocion
+  var mensaje = "antes de irte ,¡Tenemos una promoción especial para ti!\n\n";
+    mensaje +=
+      "Esta vez te ofrecemos un surtido de " + cantidadChupetines + " chupetines:\n\n";
+  for (var i = 0; i < chupetinesOfrecidos.length; i++) {
+    var chupetin = chupetinesOfrecidos[i];
+    mensaje +=
+      "Chupetín " + (i + 1) + ": color " + chupetin.color + " y sabor " + chupetin.sabor + ".\n";
+  }
+    mensaje +=
+      "\nEl precio de cada chupetín es de $25 , con esta promo cada chupetin costaria $15. ¿Deseas comprarla?";
+
+    var confirmacion = confirm(mensaje);
+
+  if (confirmacion) {
+    var precioTotal = cantidadChupetines * 15;
+    alert( "¡Gracias por tu compra! Se han cargado $" + precioTotal + " al total. Recuerda volver en otro momento, tendremos nuevas promos para ofrecerte");
+  } else {
+    alert("¡Esperamos verte denuevo! Tenemos más promociones para ti.");
+  }
+}
+
+// Llamada a la función
+ofrecerPromocion();
