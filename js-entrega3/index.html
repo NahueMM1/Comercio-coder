@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Carameleria Pipi y Pipo</title>
+    
+  </head>
+  <body>
+
+
+      <header>
+        <div class="navGeneral">
+          <div class="navLogo"><img src="./multimedia/Logo-Candy.jpg" alt="" /></div>
+            <ul class="links">
+              <li><a href="home">Home</a></li>
+              <li><a href="sobre_nosotros">Sobre Nosotros</a></li>
+              <li><a href="contactanos">Contactanos</a></li>
+            </ul>
+            <a href="#" class="action_btn">Tienda online</a>
+        </div>
+      </header>
+
+      <h2>Formulario de Contacto</h2>
+      <form class="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" required><br><br>
+        
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" required><br><br>
+        
+        <input class="btn" type="button"  value="Enviar" onclick="enviarFormulario()">
+      </form>
+
+
+      <h2>Carrito de Compras de Caramelos</h2>
+    
+      <h3>Caramelos disponibles</h3>
+      <ul id="caramelosDisponibles"></ul>
+      
+      <h3>Carrito de Compras</h3>
+      <ul id="carrito"></ul>
+      <button id="vaciarCarrito">Vaciar Carrito</button>
+      <button id="confirmarCompra">Confirmar Compra</button>
+      
+
+
+    <script src="./main.js"></script>
+  </body>
+</html>
