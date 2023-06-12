@@ -1,0 +1,14 @@
+
+
+/*
+
+Se crea un nuevo proyecto desde 0, senti que la golosineria quedo muy poco entendible a la vista y tambien se me hacia 
+un poco complicado poder realizar cambios y agregar mayores cosas, senti que el uso de props me complicaba un poco la personalizacion
+en CSS ya que se me caia cada vez que hacia una moficicacion.
+
+Se implemento un mercado simple, en el se pueden agregar a un carrito cualquiera de los productos visualizados en la parte inferior,
+al agregarlos los lleva a una card donde se ve cada producto que se desee obtener, una vez ahi es posible aumentar la cantidad del
+mismo producto o los demas , mientras mayor cantidad de un producto mayor precio del TOTAL.
+
+Aun no fue implementado un boton de finalizar compra.
+ */
