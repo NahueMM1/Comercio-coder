@@ -115,6 +115,8 @@ body {
     max-height: 88vh;
     color: #fff;
     background-color: #121212;
+    border-radius: 10px;
+    font-size: 22px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,7 +167,32 @@ body {
     text-align: center;
     padding-top: 20px;
   }
-  
+
+  .btn-confirmation{
+    font-size: 22px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .btn-success {
+    font-size: 17px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+  }
+
+  .btn-danger {
+    font-size: 17px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 3px;
+  }
+
   /*se agregaron unas lineas de css con media querys para que se adapte mejor al responsive :)*/
   
   @media only screen and (max-width: 750px) {
@@ -197,12 +224,13 @@ body {
     background-color: red;
     color: white;
     border-radius: 50%;
-    font-size: 12px;
+    font-size: 18px;
     padding: 4px;
     top: 37px;
     right: 14px;
     position: absolute;
     display: none;
+    text-align: center;
   }
   
   .sumar {

@@ -1,4 +1,4 @@
-const shopContent = document.getElementById("shopContent");
+const shopContent = document.getElementById("tiendaContenido");
 const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
 const showAlert = document.getElementById("showAlert");
@@ -15,7 +15,7 @@ productos.forEach((product) => {
     <p class="price">${product.precio} $</p>
   `;
 
-  shopContent.append(content);
+  tiendaContenido.append(content);
 
   let comprar = document.createElement("button");
   comprar.innerText = "comprar";
